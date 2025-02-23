@@ -1,0 +1,103 @@
+identity:
+  name: palo_alto_networks_ai_security_api
+  author: matt_zhang
+  label:
+    en_US: PANW AI Security
+    zh_Hans: PANW AI Security
+    pt_BR: PANW AI Security
+description:
+  human:
+    en_US: Check the input and output of LLM through Palo Alto Networks‘ AI Runtime Security API.
+    zh_Hans: 通过 Palo Alto Networks 的 AI Runtime Security API 对大模型输入和输出进行检查
+    pt_BR: Verifique a entrada e a saída de modelos grandes através da API de segurança de tempo de execução de IA da Palo Alto Networks.
+  llm: PANW AI Runtime Security API
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query string
+      zh_Hans: 查询内容
+      pt_BR: Cadeia de consulta
+    human_description:
+      en_US: Query string
+      zh_Hans: 查询内容
+      pt_BR: Cadeia de consulta
+    llm_description: Check Against PANW AI Runtime Security API
+    form: llm
+  - name: inputoroutput
+    type: select
+    required: true
+    options: 
+      - name: input
+        description: Input Check
+        type: string
+        value: input
+        label:
+          en_US: Input Check
+          zh_Hans: 检查输入内容
+          pt_BR: Verifique a entrada
+      - name: output
+        description: Output Check
+        type: string
+        value: output
+        label:
+          en_US: Output Check
+          zh_Hans: 检查输出内容
+          pt_BR: Verifique a saída
+    default: input
+    label:
+      en_US: Input filtering or output filtering
+      zh_Hans: 进行输入过滤还是输出过滤
+      pt_BR: Filtragem de entrada ou filtragem de saída
+    human_description:
+      en_US: Input filtering or output filtering
+      zh_Hans:  进行输入过滤还是输出过滤
+      pt_BR: Filtragem de entrada ou filtragem de saída
+    llm_description: Whether the query is user input, or LLM output
+    form: llm
+  - name: appname
+    type: string
+    required: false
+    default: dify_app
+    label:
+      en_US: Dify App Name
+      zh_Hans: 应用名称
+      pt_BR: Nome da aplicação Dify
+    human_description:
+      en_US: Dify App Name
+      zh_Hans: 应用名称
+      pt_BR:  Nome da aplicação Dify
+    llm_description: Dify App Name
+    form: llm
+  - name: appuser
+    type: string
+    required: false
+    default: dify_user1
+    label:
+      en_US: Dify User Name
+      zh_Hans: 用户名称
+      pt_BR: Nome de utilizador Dify
+    human_description:
+      en_US: Dify User Name
+      zh_Hans: 用户名称
+      pt_BR:  Nome de utilizador Dify
+    llm_description: Dify User Name
+    form: llm
+  - name: modelname
+    type: string
+    required: false
+    default: dify_default_llm
+    label:
+      en_US: Model Name
+      zh_Hans: 模型名称
+      pt_BR: Nome do modelo
+    human_description:
+      en_US: Model Name
+      zh_Hans: 模型名称
+      pt_BR:  Nome do modelo
+    llm_description: Model Name
+    form: llm
+extra:
+  python:
+    source: tools/palo_alto_networks_ai_security_api.py

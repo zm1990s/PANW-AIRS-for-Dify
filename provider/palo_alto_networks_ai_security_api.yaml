@@ -1,0 +1,46 @@
+identity:
+  author: matt_zhang
+  name: palo_alto_networks_ai_security_api
+  label:
+    en_US: PANW AI Security
+    zh_Hans: PANW AI Security
+    pt_BR: PANW AI Security
+  description:
+    en_US: PANW AI Runtime Security API
+    zh_Hans: PANW AI Runtime Security API
+    pt_BR: PANW AI Runtime Security API
+  icon: icon.svg
+  tags:
+    - utilities
+credentials_for_provider: 
+  airs_api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: PANW AIRS API key
+      zh_Hans: PANW AIRS API key
+    placeholder:
+      en_US: Please input your AIRS API key
+      zh_Hans: 请输入你的 AIRS API key
+    help:
+      en_US: Get your AIRS API key from SCM
+      zh_Hans: 从 SCM 获取您的 AIRS API key
+    url: https://docs.paloaltonetworks.com/ai-runtime-security/activation-and-onboarding/ai-runtime-security-api-intercept-overview/airs-apirs-manage-api-keys-profile-apps
+  airs_ai_profile_name:
+    type: text-input
+    required: true
+    label:
+      en_US: PANW AIRS Profile Name
+      zh_Hans: PANW AIRS Profile Name
+    placeholder:
+      en_US: Please input your AIRS Profile Name
+      zh_Hans: 请输入你的 AIRS Profile Name
+    help:
+      en_US: Get your AIRS Profile Name from SCM
+      zh_Hans: 从 SCM 获取您的 AIRS Profile Name
+    url: https://docs.paloaltonetworks.com/ai-runtime-security/activation-and-onboarding/ai-runtime-security-api-intercept-overview/airs-apirs-manage-api-keys-profile-apps
+tools:
+  - tools/palo_alto_networks_ai_security_api.yaml
+extra:
+  python:
+    source: provider/palo_alto_networks_ai_security_api.py
