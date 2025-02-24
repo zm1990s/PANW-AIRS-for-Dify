@@ -1,6 +1,6 @@
 version: 0.0.1
 type: plugin
-author: PANW
+author: zm1990s
 name: ai_security_api
 label:
   en_US: Palo Alto Networks
