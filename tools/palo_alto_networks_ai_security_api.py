@@ -10,19 +10,6 @@ AIRS_API_URL = "https://service.api.aisecurity.paloaltonetworks.com/v1/scan/sync
 
 class PaloAltoNetworksAiSecurityApiTool(Tool):
 
-    def _parse_response(self, response: dict) -> dict:
-        result = {
-            "action": response.get("action", ""),
-            "category": response.get("category", ""),
-            "profile_id": response.get("profile_id", ""),
-            "profile_name": response.get("profile_name", ""),
-            "prompt_detected": response.get("prompt_detected", {}),
-            "report_id": response.get("report_id", ""),
-            "response_detected": response.get("response_detected", {}),
-            "scan_id": response.get("scan_id", ""),
-            "tr_id": response.get("tr_id", "")
-        }
-        return result
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         headers = {
             "Content-Type": "application/json",
@@ -50,6 +37,6 @@ class PaloAltoNetworksAiSecurityApiTool(Tool):
 
         response = requests.post(AIRS_API_URL, headers=headers, json=data, verify=False)
         response.raise_for_status()
-        valuable_res = self._parse_response(response.json())
+        valuable_res = response.json()
         yield self.create_text_message(valuable_res["action"])
         yield self.create_json_message(valuable_res)
