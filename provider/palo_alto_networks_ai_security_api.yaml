@@ -2,9 +2,9 @@ identity:
   author: zm1990s
   name: palo_alto_networks_ai_security_api
   label:
-    en_US: PANW AI Security
-    zh_Hans: PANW AI Security
-    pt_BR: PANW AI Security
+    en_US: Palo Alto Networks
+    zh_Hans: Palo Alto Networks
+    pt_BR: Palo Alto Networks
   description:
     en_US: PANW AI Runtime Security API
     zh_Hans: PANW AI Runtime Security API
