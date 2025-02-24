@@ -55,7 +55,7 @@ parameters:
       zh_Hans:  进行输入过滤还是输出过滤
       pt_BR: Filtragem de entrada ou filtragem de saída
     llm_description: Whether the query is user input, or LLM output
-    form: llm
+    form: form
   - name: appname
     type: string
     required: false
@@ -69,7 +69,7 @@ parameters:
       zh_Hans: 应用名称
       pt_BR:  Nome da aplicação Dify
     llm_description: Dify App Name
-    form: llm
+    form: form
   - name: appuser
     type: string
     required: false
@@ -83,7 +83,7 @@ parameters:
       zh_Hans: 用户名称
       pt_BR:  Nome de utilizador Dify
     llm_description: Dify User Name
-    form: llm
+    form: form
   - name: modelname
     type: string
     required: false
@@ -97,7 +97,7 @@ parameters:
       zh_Hans: 模型名称
       pt_BR:  Nome do modelo
     llm_description: Model Name
-    form: llm
+    form: form
 extra:
   python:
     source: tools/palo_alto_networks_ai_security_api.py
