@@ -98,6 +98,19 @@ parameters:
       pt_BR:  Nome do modelo
     llm_description: Model Name
     form: form
+  - name: profileoverride
+    type: string
+    required: false
+    label:
+      en_US: PANW AIRS Profile Name Override
+      zh_Hans: 指定新的 PANW AIRS Profile Name
+      pt_BR: Especifique um novo nome de perfil PANW AIRS
+    human_description:
+      en_US: Specify a new PANW AIRS Profile Name
+      zh_Hans: 指定新的 PANW AIRS Profile Name
+      pt_BR:  Especifique um novo nome de perfil PANW AIRS
+    llm_description: PANW AIRS Profile Name Override
+    form: form
 extra:
   python:
     source: tools/palo_alto_networks_ai_security_api.py

@@ -21,6 +21,12 @@ class PaloAltoNetworksAiSecurityApiTool(Tool):
             contents["prompt"] = tool_parameters["query"]
         elif tool_parameters.get("inputoroutput") == "output":
             contents["response"] = tool_parameters["query"]
+        # Determine the profile name based on the profileoverride parameter
+        profileoverride = tool_parameters.get("profileoverride")
+        if profileoverride:
+            profile_name = profileoverride
+        else:
+            profile_name = self.runtime.credentials["airs_ai_profile_name"]
 
         data = {
             "metadata": {
@@ -29,9 +35,8 @@ class PaloAltoNetworksAiSecurityApiTool(Tool):
                 "app_user": tool_parameters.get("appuser", "dify_user1")
             },
             "contents": [contents],
-            "tr_id": "1234",
             "ai_profile": {
-                "profile_name": self.runtime.credentials["airs_ai_profile_name"]
+                "profile_name": profile_name
             }
         }
 
