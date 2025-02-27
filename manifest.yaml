@@ -1,4 +1,4 @@
-version: 0.0.1
+version: 0.0.2
 type: plugin
 author: zm1990s
 name: ai_security_api
@@ -14,7 +14,7 @@ description:
   pt_BR: PANW AI Runtime Security API
 icon: icon.svg
 resource:
-  memory: 268435456
+  memory: 10485760
   permission: {}
 plugins:
   tools:
@@ -29,5 +29,4 @@ meta:
     version: "3.12"
     entrypoint: main
 created_at: 2025-02-21T15:59:05.59268+08:00
-privacy: PRIVACY.md
-verified: true
+privacy: ./PRIVACY.md

@@ -38,6 +38,14 @@ The following is an example of calling the input side tool:
 
 ![img3](_assets/img3-en.png)
 
+The specific parameters are described as follows:
+
+- **Input Check or Output Check?** The PANW AIRS Prompt/Response identifier is used to distinguish whether the content to be checked belongs to input or output.
+- **App Name (Optional)**: The name of the Chatflow/Agent, used for logging purposes.
+- **User Name (Optional)**: The user identifier for the current application, used for logging purposes.
+- **Model Name (Optional)**: The name of the model used by the current application, used for logging purposes.
+- **PANW AIRS Profile Name Override (Optional)**: If you want to use a different Profile for this application, you can adjust it through this parameter. The default will use the globally configured Profile Name.
+
 The input judgment component is configured as follows:
 
 ![img4](_assets/img4-en.png)

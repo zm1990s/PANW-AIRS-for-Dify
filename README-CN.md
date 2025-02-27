@@ -1,7 +1,9 @@
 ## PANW AI Security Tools for Dify
 
 **作者：** Matt Zhang
+
 **版本：** 0.0.1
+
 **类型:** tool
 
 ### 概述
@@ -37,6 +39,14 @@
 输入侧工具调用示例如下：
 
 <img src="_assets/img3.png" alt="img3" style="zoom:50%;" />
+
+具体参数说明如下：
+
+- 进行输入检查还是输出检查？：PANW AIRS Prompt/Response 标识符，用于区分待检测内容属于输入还是输出
+- 应用名称（可选）：该 Chatflow/Agent 的名称，用于日志记录
+- 用户名称（可选）：当前应用的用户标识，用于日志记录
+- 模型名称（可选）：当前应用所使用的模型名称，用于日志记录
+- 指定新的 PANW AIRS Profile Name（可选）：如果想针对该应用使用不同的 Profile，可以通过此参数来调整。默认将会使用全局配置的 Profile Name
 
 输入判断组件配置如下：
 
