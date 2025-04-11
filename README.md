@@ -45,7 +45,7 @@ The following is an example of calling the input side tool:
 
 The specific parameters are described as follows:
 
-- **Input Check or Output Check?** The PANW AIRS Prompt/Response identifier is used to distinguish whether the content to be checked belongs to input or output.
+- **Check Options?** The PANW AIRS Prompt/Response identifier is used to distinguish whether the content to be checked belongs to input or output. Supported values are: `Input Check`,`Output Check`,`Code Input Check` and `Code Output Check`
 - **App Name (Optional)**: The name of the Chatflow/Agent, used for logging purposes.
 - **User Name (Optional)**: The user identifier for the current application, used for logging purposes.
 - **Model Name (Optional)**: The name of the model used by the current application, used for logging purposes.
