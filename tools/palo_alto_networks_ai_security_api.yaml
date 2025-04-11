@@ -51,18 +51,36 @@ parameters:
           zh_Hans: 输出检查
           pt_BR: Verifique a saída
           ja_JP: 出力チェック
+      - name: codeinput
+        description: Code Input Check
+        type: string
+        value: codeinput
+        label:
+          en_US: Code Input Check
+          zh_Hans: 代码输入检查
+          pt_BR: Verificação de entrada de código
+          ja_JP: コード入力チェック
+      - name: codeoutput
+        description: Output Check
+        type: string
+        value: codeoutput
+        label:
+          en_US: Code Output Check
+          zh_Hans: 代码输出检查
+          pt_BR: Verificador de saída de código
+          ja_JP: コード出力チェック
     default: input
     label:
-      en_US: Input Check or Output Check?
-      zh_Hans: 进行输入检查还是输出检查？
-      pt_BR: Verificação de entrada ou verificação de saída?
-      ja_JP: 入力チェックですか、それとも出力チェックですか?
+      en_US: Check Options?
+      zh_Hans: 检查类型？
+      pt_BR: Opções de verificação?
+      ja_JP: オプションを確認する?
     human_description:
-      en_US: Input Check or Output Check?
-      zh_Hans:  进行输入检查还是输出检查？
-      pt_BR: Verificação de entrada ou verificação de saída?
-      ja_JP: 入力チェックですか、それとも出力チェックですか?
-    llm_description: Whether the query is user input, or LLM output
+      en_US: Check Options?
+      zh_Hans:  检查类型？
+      pt_BR: Opções de verificação?
+      ja_JP: オプションを確認する?
+    llm_description: Whether the query is user input, or LLM output, is it Code input ir Code output
     form: form
   - name: appname
     type: string

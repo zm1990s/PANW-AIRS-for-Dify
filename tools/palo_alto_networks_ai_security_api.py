@@ -21,6 +21,11 @@ class PaloAltoNetworksAiSecurityApiTool(Tool):
             contents["prompt"] = tool_parameters["query"]
         elif tool_parameters.get("inputoroutput") == "output":
             contents["response"] = tool_parameters["query"]
+        elif tool_parameters.get("inputoroutput") == "codeinput":
+            contents["code_prompt"] = tool_parameters["query"]
+        elif tool_parameters.get("inputoroutput") == "codeoutput":
+            contents["code_response"] = tool_parameters["query"]
+
         # Determine the profile name based on the profileoverride parameter
         profileoverride = tool_parameters.get("profileoverride")
         if profileoverride:
