@@ -33,7 +33,7 @@ credentials_for_provider:
       zh_Hans: 从 SCM 获取您的 AIRS API key
       pt_BR: Obtenha sua chave de API AIRS do SCM
       ja_JP: SCMからAIRS APIキーを取得する
-    url: https://docs.paloaltonetworks.com/ai-runtime-security/activation-and-onboarding/ai-runtime-security-api-intercept-overview/airs-apirs-manage-api-keys-profile-apps
+    url: https://docs.paloaltonetworks.com/ai-runtime-security/administration/prevent-network-security-threats/airs-apirs-manage-api-keys-profile-apps
   airs_ai_profile_name:
     type: text-input
     required: true
@@ -52,7 +52,7 @@ credentials_for_provider:
       zh_Hans: 从 SCM 获取您的 AIRS Profile Name
       pt_BR: Obtenha o nome do seu perfil AIRS do SCM
       ja_JP: SCMからAIRSプロファイル名を取得する
-    url: https://docs.paloaltonetworks.com/ai-runtime-security/activation-and-onboarding/ai-runtime-security-api-intercept-overview/airs-apirs-manage-api-keys-profile-apps
+    url: https://docs.paloaltonetworks.com/ai-runtime-security/administration/prevent-network-security-threats/airs-apirs-manage-api-keys-profile-apps
 tools:
   - tools/palo_alto_networks_ai_security_api.yaml
 extra:
