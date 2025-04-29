@@ -2,7 +2,7 @@
 
 **Author:** Matt Zhang
 
-**Version:** 0.0.3
+**Version:** 0.0.4
 
 **Type:** tool
 
@@ -91,7 +91,7 @@ Prompt examples:
 
 **作者：** Matt Zhang
 
-**版本：** 0.0.3
+**版本：** 0.0.4
 
 **类型：** tool
 
@@ -175,6 +175,10 @@ Prompt examples:
 <img src="_assets/img8.png" alt="img8" style="zoom:50%;" />
 
 ## Changelog
+
+### v0.0.4
+- 修复文档链接
+
 ### v0.0.3
 - 新增恶意代码检测功能，与 API 功能对齐
 
