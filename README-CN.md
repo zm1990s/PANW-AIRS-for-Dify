@@ -10,6 +10,10 @@
 
 该插件是一款适用于 Dify 平台的 PANW AI Runtime Security API 安全工具，旨在增强 AI 模型和数据交互中的安全性，通过集成 Palo Alto Networks 先进的云威胁检测服务，为用户提供全方位的安全防护。
 
+### 使用前的重要声明
+
+本软件按“原样”提供，作者不承担与本软件相关的任何担保，包括所有关于适销性和适用性的默示担保。在任何情况下，作者均不对任何因使用、数据或利润损失而导致的特殊、直接、间接或后果性损害或任何损害承担责任，无论是因合同、疏忽或其他侵权行为而导致的，也无论该等损害是否因使用或执行本软件而产生或与之相关。
+
 ### 前提条件
 
 已获得授权的用户，请参照[此文档](https://docs.paloaltonetworks.com/ai-runtime-security/activation-and-onboarding/ai-runtime-security-api-intercept-overview)完成 AI Runtime Security 的配置。

@@ -13,6 +13,10 @@
 
 This plugin is a PANW AI Runtime Security API security tool designed for the Dify platform, aiming to enhance the security of AI model and interactions. By integrating Palo Alto Networks' advanced cloud threat detection services, it provides users with comprehensive security protection.
 
+### IMPORTANT NOTICE BEFORE USE
+
+The software is provided "as is" and the author disclaims all warranties with regard to this software including all implied warranties of merchantability and fitness. in no event shall the author be liable for any special, direct, indirect, or consequential damages or any damages whatsoever resulting from loss of use, data or profits, whether in an action of contract, negligence or other tortious action, arising out of or in connection with the use or performance of this software.
+
 ### Prerequisites
 
 Authorized users should refer to the [AI Runtime Security: API Intercept Overview](https://docs.paloaltonetworks.com/ai-runtime-security/activation-and-onboarding/ai-runtime-security-api-intercept-overview) to complete the configuration of AI Runtime Security.
@@ -87,6 +91,10 @@ Prompt examples:
 
 ![img8](_assets/img8-en.png)
 
+
+
+
+
 ## PANW AI Security Tools for Dify
 
 **作者：** Matt Zhang
@@ -94,6 +102,10 @@ Prompt examples:
 **版本：** 0.0.4
 
 **类型：** tool
+
+### 使用前的重要声明
+
+本软件按“原样”提供，作者不承担与本软件相关的任何担保，包括所有关于适销性和适用性的默示担保。在任何情况下，作者均不对任何因使用、数据或利润损失而导致的特殊、直接、间接或后果性损害或任何损害承担责任，无论是因合同、疏忽或其他侵权行为而导致的，也无论该等损害是否因使用或执行本软件而产生或与之相关。
 
 ### 概述
 
