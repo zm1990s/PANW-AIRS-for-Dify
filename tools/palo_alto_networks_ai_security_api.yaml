@@ -148,3 +148,9 @@ parameters:
 extra:
   python:
     source: tools/palo_alto_networks_ai_security_api.py
+output_schema:
+  type: object
+  properties:
+    masked_data:
+      type: string
+      description: "Masked content if data masking is enabled in SCM"

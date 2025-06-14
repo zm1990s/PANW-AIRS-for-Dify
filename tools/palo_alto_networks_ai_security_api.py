@@ -50,3 +50,9 @@ class PaloAltoNetworksAiSecurityApiTool(Tool):
         valuable_res = response.json()
         yield self.create_text_message(valuable_res["action"])
         yield self.create_json_message(valuable_res)
+        if "prompt_masked_data" in valuable_res:
+            yield self.create_variable_message("masked_data", valuable_res["prompt_masked_data"].get("data", ""))
+        elif "response_masked_data" in valuable_res:
+            yield self.create_variable_message("masked_data", valuable_res["response_masked_data"].get("data", ""))
+        else:
+            yield self.create_variable_message("masked_data", "")

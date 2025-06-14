@@ -2,7 +2,7 @@
 
 **Author:** Matt Zhang
 
-**Version:** 0.0.4
+**Version:** 0.0.5
 
 **Type:** tool
 
@@ -187,6 +187,10 @@ Prompt examples:
 <img src="_assets/img8.png" alt="img8" style="zoom:50%;" />
 
 ## Changelog
+
+
+### v0.0.5
+- 新增 masked_data 输出参数，存放 DLP 脱敏后的内容
 
 ### v0.0.4
 - 修复文档链接
