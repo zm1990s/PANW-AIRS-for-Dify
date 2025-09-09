@@ -53,6 +53,49 @@ credentials_for_provider:
       pt_BR: Obtenha o nome do seu perfil AIRS do SCM
       ja_JP: SCMからAIRSプロファイル名を取得する
     url: https://docs.paloaltonetworks.com/ai-runtime-security/administration/prevent-network-security-threats/airs-apirs-manage-api-keys-profile-apps
+  airs_api_endpoint_region:
+    type: select
+    required: true
+    default: us
+    options: 
+      - name: us
+        description: United States
+        type: string
+        value: us
+        label:
+          en_US: United States
+          zh_Hans: 美国
+          pt_BR: Estados Unidos
+          ja_JP: アメリカ合衆国
+      - name: eu
+        description: EU (Germany)
+        type: string
+        value: eu
+        label:
+          en_US: EU (Germany)
+          zh_Hans: 欧盟（德国）
+          pt_BR: EU (Germany)
+          ja_JP: EU（ドイツ）
+      - name: india
+        description: India
+        type: string
+        value: india
+        label:
+          en_US: India
+          zh_Hans: 印度
+          pt_BR: Índia
+          ja_JP: インド
+    label:
+      en_US: PANW AIRS API Region
+      zh_Hans: PANW AIRS API Region
+      pt_BR: PANW AIRS API Region
+      ja_JP: PANW AIRS API Region
+    help:
+      en_US: Select the Prisma AIRS region (it needs to be consistent with the region in SCM)
+      zh_Hans: 选择 Prisma AIRS 区域(需要保持和 SCM 中的区域一致)
+      pt_BR: Selecione a região Prisma AIRS (precisa ser consistente com a região no SCM)
+      ja_JP: Prisma AIRS リージョンを選択します (SCM のリージョンと一致している必要があります)
+    url: https://pan.dev/prisma-airs/scan/api/#scan-api-endpoints
 tools:
   - tools/palo_alto_networks_ai_security_api.yaml
 extra:

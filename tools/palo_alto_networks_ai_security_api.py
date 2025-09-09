@@ -6,11 +6,21 @@ import requests
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 
-AIRS_API_URL = "https://service.api.aisecurity.paloaltonetworks.com/v1/scan/sync/request"
+def get_api_url(region):
+    region_to_url = {
+        "us": "https://service.api.aisecurity.paloaltonetworks.com/v1/scan/sync/request",
+        "eu": "https://service-de.api.aisecurity.paloaltonetworks.com/v1/scan/sync/request",
+        "india": "https://service-in.api.aisecurity.paloaltonetworks.com/v1/scan/sync/request"
+    }
+    return region_to_url.get(region.lower(), region_to_url["us"])
 
 class PaloAltoNetworksAiSecurityApiTool(Tool):
 
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
+        # Get region from credentials, default to "us" if not specified
+        region = self.runtime.credentials.get("airs_api_endpoint_region", "us")
+        AIRS_API_URL = get_api_url(region)
+        
         headers = {
             "Content-Type": "application/json",
             "x-pan-token": self.runtime.credentials["airs_api_key"]
@@ -55,4 +65,4 @@ class PaloAltoNetworksAiSecurityApiTool(Tool):
         elif "response_masked_data" in valuable_res:
             yield self.create_variable_message("masked_data", valuable_res["response_masked_data"].get("data", ""))
         else:
-            yield self.create_variable_message("masked_data", "")
+            yield self.create_variable_message("masked_data", tool_parameters["query"])
