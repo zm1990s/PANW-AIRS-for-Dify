@@ -91,7 +91,29 @@ Prompt examples:
 
 ![img8](_assets/img8-en.png)
 
+## Changelog
 
+### v0.0.5
+- Added masked_data output parameter, storing content after DLP masking
+- Added region selection feature, currently supporting three regions: US, EU, India
+
+### v0.0.4
+- Fixed documentation links
+
+### v0.0.3
+- Added malicious code detection feature, aligning with API functionality
+
+### v0.0.2
+- Added Profile Name Override feature, meeting the needs of different applications to use different security policy configurations (Note: globally still can only share one Key)
+
+### v0.0.1
+- Initial version, implementing basic global credential configuration, input checking, and output checking
+- Support for identifying the following:
+  - Prompt injection
+  - Malicious URLs
+  - Sensitive data detection (supports backend policy definition)
+  - SQL security
+  - Toxic Content
 
 
 
@@ -99,7 +121,7 @@ Prompt examples:
 
 **作者：** Matt Zhang
 
-**版本：** 0.0.4
+**版本：** 0.0.5
 
 **类型：** tool
 
@@ -191,6 +213,7 @@ Prompt examples:
 
 ### v0.0.5
 - 新增 masked_data 输出参数，存放 DLP 脱敏后的内容
+- 新增区域选择功能，目前支持三个区域：US，EU，India
 
 ### v0.0.4
 - 修复文档链接
