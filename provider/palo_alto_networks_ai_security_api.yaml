@@ -85,6 +85,15 @@ credentials_for_provider:
           zh_Hans: 印度
           pt_BR: Índia
           ja_JP: インド
+      - name: singapore
+        description: Singapore
+        type: string
+        value: singapore
+        label:
+          en_US: Singapore
+          zh_Hans: 新加坡
+          pt_BR: Singapura
+          ja_JP: シンガポール
     label:
       en_US: PANW AIRS API Region
       zh_Hans: PANW AIRS API Region

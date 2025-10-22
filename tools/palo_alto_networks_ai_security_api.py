@@ -10,7 +10,8 @@ def get_api_url(region):
     region_to_url = {
         "us": "https://service.api.aisecurity.paloaltonetworks.com/v1/scan/sync/request",
         "eu": "https://service-de.api.aisecurity.paloaltonetworks.com/v1/scan/sync/request",
-        "india": "https://service-in.api.aisecurity.paloaltonetworks.com/v1/scan/sync/request"
+        "india": "https://service-in.api.aisecurity.paloaltonetworks.com/v1/scan/sync/request",
+        "singapore": "https://service-sg.api.aisecurity.paloaltonetworks.com/v1/scan/sync/request"
     }
     return region_to_url.get(region.lower(), region_to_url["us"])
 
