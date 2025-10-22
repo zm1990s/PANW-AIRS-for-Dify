@@ -95,7 +95,7 @@ Prompt examples:
 
 ### v0.0.5
 - Added masked_data output parameter, storing content after DLP masking
-- Added region selection feature, currently supporting three regions: US, EU, India
+- Added region selection feature, currently supporting three regions: US, EU, India, Singapore
 
 ### v0.0.4
 - Fixed documentation links
