@@ -130,6 +130,21 @@ parameters:
       ja_JP: モデル名
     llm_description: Model Name
     form: form
+  - name: tr_id
+    type: string
+    required: false
+    label:
+      en_US: Transaction ID
+      zh_Hans: 会话 ID
+      pt_BR: ID da transação
+      ja_JP: トランザクションID
+    human_description:
+      en_US: Transaction ID for tracking requests
+      zh_Hans: 用于跟踪请求的会话ID
+      pt_BR: ID da transação para rastreamento de solicitações
+      ja_JP: リクエスト追跡用のトランザクションID
+    llm_description: Transaction ID for request tracking
+    form: form
   - name: profileoverride
     type: string
     required: false
@@ -154,3 +169,6 @@ output_schema:
     masked_data:
       type: string
       description: "Masked content if data masking is enabled in SCM"
+    tr_id:
+      type: string
+      description: "Transaction ID returned from the API response"

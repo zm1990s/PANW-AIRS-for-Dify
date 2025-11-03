@@ -56,6 +56,11 @@ class PaloAltoNetworksAiSecurityApiTool(Tool):
             }
         }
 
+        # Add tr_id if provided
+        tr_id = tool_parameters.get("tr_id")
+        if tr_id:
+            data["tr_id"] = tr_id
+
         response = requests.post(AIRS_API_URL, headers=headers, json=data, verify=False)
         response.raise_for_status()
         valuable_res = response.json()
@@ -67,3 +72,7 @@ class PaloAltoNetworksAiSecurityApiTool(Tool):
             yield self.create_variable_message("masked_data", valuable_res["response_masked_data"].get("data", ""))
         else:
             yield self.create_variable_message("masked_data", tool_parameters["query"])
+        
+        # Extract and return tr_id from response
+        response_tr_id = valuable_res.get("tr_id", "")
+        yield self.create_variable_message("tr_id", response_tr_id)

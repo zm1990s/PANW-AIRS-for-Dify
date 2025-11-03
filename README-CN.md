@@ -2,7 +2,7 @@
 
 **作者：** Matt Zhang
 
-**版本：** 0.0.5
+**版本：** 0.0.6
 
 **类型：** tool
 
@@ -91,6 +91,9 @@
 
 
 ## Changelog
+
+### v0.0.6
+- 新增 tr_id 参数，用于事务 ID （Session ID）跟踪
 
 ### v0.0.5
 - 新增 masked_data 输出参数，存放 DLP 脱敏后的内容
