@@ -1,0 +1,242 @@
+provider: prisma-airs-aigw
+label:
+  en_US: Prisma AIRS AI Gateway
+  zh_Hans: Prisma AIRS AI Gateway
+  ja_JP: Prisma AIRS AI Gateway
+  pt_BR: Prisma AIRS AI Gateway
+description:
+  en_US: PANW Prisma AIRS AI Gateway — OpenAI-compatible LLM proxy with AI security controls
+  zh_Hans: PANW Prisma AIRS AI Gateway — 支持 AI 安全管控的 OpenAI 兼容 LLM 代理
+  ja_JP: PANW Prisma AIRS AI Gateway — AIセキュリティ制御付きのOpenAI互換LLMプロキシ
+  pt_BR: PANW Prisma AIRS AI Gateway — Proxy LLM compatível com OpenAI com controles de segurança de IA
+icon_small:
+  en_US: icon.svg
+icon_large:
+  en_US: icon.svg
+background: "#E5E7EB"
+help:
+  title:
+    en_US: How to get your AI Gateway API Key
+    zh_Hans: 如何获取 AI Gateway API Key
+    ja_JP: AI Gateway APIキーの取得方法
+    pt_BR: Como obter sua chave de API do AI Gateway
+  url:
+    en_US: https://docs.paloaltonetworks.com/ai-runtime-security/administration/configure-ai-gateway
+    zh_Hans: https://docs.paloaltonetworks.com/ai-runtime-security/administration/configure-ai-gateway
+    ja_JP: https://docs.paloaltonetworks.com/ai-runtime-security/administration/configure-ai-gateway
+    pt_BR: https://docs.paloaltonetworks.com/ai-runtime-security/administration/configure-ai-gateway
+supported_model_types:
+  - llm
+configurate_methods:
+  - predefined-model
+  - customizable-model
+provider_credential_schema:
+  credential_form_schemas:
+    - variable: api_base_url
+      label:
+        en_US: AI Gateway URL
+        zh_Hans: AI Gateway 地址
+        ja_JP: AI Gateway URL
+        pt_BR: URL do AI Gateway
+      type: text-input
+      required: true
+      default: "https://aigw.portkey.ai/v1"
+      placeholder:
+        en_US: "https://aigw.portkey.ai/v1"
+        zh_Hans: "https://aigw.portkey.ai/v1"
+        ja_JP: "https://aigw.portkey.ai/v1"
+        pt_BR: "https://aigw.portkey.ai/v1"
+      help:
+        title:
+          en_US: AI Gateway base URL (OpenAI-compatible endpoint). Use default for Portkey-hosted gateway, or enter your on-premises deployment URL.
+          zh_Hans: AI Gateway 基础 URL（OpenAI 兼容端点）。使用默认值表示 Portkey 托管网关，或输入您的本地部署地址。
+          ja_JP: AI GatewayのベースURL（OpenAI互換エンドポイント）。Portkeysのホスト型ゲートウェイにはデフォルトを使用し、オンプレミスのURLを入力することもできます。
+          pt_BR: URL base do AI Gateway (endpoint compatível com OpenAI). Use o padrão para gateway hospedado no Portkey ou insira a URL do seu deployment local.
+    - variable: api_key
+      label:
+        en_US: API Key
+        zh_Hans: API Key
+        ja_JP: APIキー
+        pt_BR: Chave de API
+      type: secret-input
+      required: true
+      placeholder:
+        en_US: Enter your AI Gateway API Key
+        zh_Hans: 输入您的 AI Gateway API Key
+        ja_JP: AI Gateway APIキーを入力してください
+        pt_BR: Insira sua chave de API do AI Gateway
+      help:
+        title:
+          en_US: API key used to authenticate with the AI Gateway.
+          zh_Hans: 用于对 AI Gateway 进行身份验证的 API Key。
+          ja_JP: AI Gatewayの認証に使用するAPIキー。
+          pt_BR: Chave de API usada para autenticar no AI Gateway.
+    - variable: api_key_header
+      label:
+        en_US: API Key Header
+        zh_Hans: API Key 请求头名称
+        ja_JP: APIキーヘッダー名
+        pt_BR: Nome do Header da Chave de API
+      type: text-input
+      required: true
+      default: "x-portkey-api-key"
+      placeholder:
+        en_US: "x-portkey-api-key"
+        zh_Hans: "x-portkey-api-key"
+        ja_JP: "x-portkey-api-key"
+        pt_BR: "x-portkey-api-key"
+      help:
+        title:
+          en_US: HTTP header used to send the API key. Use x-portkey-api-key for Portkey-hosted gateway, or Authorization for standard Bearer token auth.
+          zh_Hans: 发送 API Key 使用的 HTTP 请求头。Portkey 托管网关使用 x-portkey-api-key，标准 Bearer Token 认证使用 Authorization。
+          ja_JP: APIキーを送信するHTTPヘッダー。Portkey托管ゲートウェイには x-portkey-api-key、標準Bearer認証には Authorization を使用します。
+          pt_BR: Header HTTP usado para enviar a chave de API. Use x-portkey-api-key para gateway hospedado no Portkey, ou Authorization para autenticação Bearer padrão.
+    - variable: tls_verify
+      label:
+        en_US: TLS Certificate Verification
+        zh_Hans: TLS 证书验证
+        ja_JP: TLS証明書検証
+        pt_BR: Verificação de Certificado TLS
+      type: select
+      required: true
+      default: "true"
+      options:
+        - value: "true"
+          label:
+            en_US: Enabled (recommended)
+            zh_Hans: 启用（推荐）
+            ja_JP: 有効（推奨）
+            pt_BR: Habilitado (recomendado)
+        - value: "false"
+          label:
+            en_US: Disabled (for self-signed certificates)
+            zh_Hans: 禁用（用于自签名证书）
+            ja_JP: 無効（自己署名証明書用）
+            pt_BR: Desabilitado (para certificados autoassinados)
+      help:
+        title:
+          en_US: Disable only when connecting to a gateway with a self-signed TLS certificate.
+          zh_Hans: 仅在连接使用自签名 TLS 证书的网关时禁用。
+          ja_JP: 自己署名TLS証明書を持つゲートウェイに接続する場合のみ無効にしてください。
+          pt_BR: Desative somente ao conectar a um gateway com certificado TLS autoassinado.
+    - variable: validation_model
+      label:
+        en_US: Validation Model
+        zh_Hans: 验证用模型
+        ja_JP: 検証用モデル
+        pt_BR: Modelo de Validação
+      type: text-input
+      required: true
+      placeholder:
+        en_US: "e.g. @aws-bedrock/amazon.nova-lite-v1:0"
+        zh_Hans: "例如 @aws-bedrock/amazon.nova-lite-v1:0"
+        ja_JP: "例：@aws-bedrock/amazon.nova-lite-v1:0"
+        pt_BR: "ex: @aws-bedrock/amazon.nova-lite-v1:0"
+      help:
+        title:
+          en_US: A model name available on your gateway, used only to verify connectivity and credentials.
+          zh_Hans: 网关上可用的模型名称，仅用于验证连通性和凭据。
+          ja_JP: ゲートウェイで利用可能なモデル名。接続と認証の確認にのみ使用されます。
+          pt_BR: Um modelo disponível no gateway, usado apenas para verificar conectividade e credenciais.
+model_credential_schema:
+  model:
+    label:
+      en_US: Model Name
+      zh_Hans: 模型名称
+      ja_JP: モデル名
+      pt_BR: Nome do Modelo
+    placeholder:
+      en_US: "e.g. @aws-bedrock/amazon.nova-lite-v1:0"
+      zh_Hans: "例如 @aws-bedrock/amazon.nova-lite-v1:0"
+      ja_JP: "例：@aws-bedrock/amazon.nova-lite-v1:0"
+      pt_BR: "ex: @aws-bedrock/amazon.nova-lite-v1:0"
+  credential_form_schemas:
+    - variable: context_size
+      label:
+        en_US: Context Window Size
+        zh_Hans: 上下文窗口大小
+        ja_JP: コンテキストウィンドウサイズ
+        pt_BR: Tamanho da Janela de Contexto
+      type: text-input
+      required: true
+      default: "32768"
+      placeholder:
+        en_US: "e.g. 32768"
+        zh_Hans: "例如 32768"
+        ja_JP: "例：32768"
+        pt_BR: "ex: 32768"
+    - variable: vision_support
+      label:
+        en_US: Vision Support
+        zh_Hans: 视觉支持
+        ja_JP: ビジョンサポート
+        pt_BR: Suporte a Visão
+      type: select
+      required: true
+      default: "not_support"
+      options:
+        - value: "support"
+          label:
+            en_US: Supported
+            zh_Hans: 支持
+            ja_JP: サポートあり
+            pt_BR: Suportado
+        - value: "not_support"
+          label:
+            en_US: Not Supported
+            zh_Hans: 不支持
+            ja_JP: サポートなし
+            pt_BR: Não suportado
+    - variable: function_calling_type
+      label:
+        en_US: Tool Calls
+        zh_Hans: 工具调用
+        ja_JP: ツール呼び出し
+        pt_BR: Chamadas de Ferramentas
+      type: select
+      required: true
+      default: "tool_call"
+      options:
+        - value: "tool_call"
+          label:
+            en_US: Supported (tools)
+            zh_Hans: 支持（tools 格式）
+            ja_JP: サポートあり（tools形式）
+            pt_BR: Suportado (tools)
+        - value: "no_call"
+          label:
+            en_US: Not Supported
+            zh_Hans: 不支持
+            ja_JP: サポートなし
+            pt_BR: Não suportado
+    - variable: api_base_url
+      label:
+        en_US: AI Gateway URL
+        zh_Hans: AI Gateway 地址
+        ja_JP: AI Gateway URL
+        pt_BR: URL do AI Gateway
+      type: text-input
+      required: false
+      placeholder:
+        en_US: "Leave blank to use provider default"
+        zh_Hans: "留空则使用全局配置"
+        ja_JP: "空白の場合はプロバイダーのデフォルトを使用"
+        pt_BR: "Deixe em branco para usar o padrão do provedor"
+    - variable: api_key
+      label:
+        en_US: API Key
+        zh_Hans: API Key
+        ja_JP: APIキー
+        pt_BR: Chave de API
+      type: secret-input
+      required: false
+      placeholder:
+        en_US: "Leave blank to use provider default"
+        zh_Hans: "留空则使用全局配置"
+        ja_JP: "空白の場合はプロバイダーのデフォルトを使用"
+        pt_BR: "Deixe em branco para usar o padrão do provedor"
+extra:
+  python:
+    provider_source: provider/prisma-airs-aigw.py
+    model_sources:
+      - "models/llm/llm.py"
